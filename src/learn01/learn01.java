@@ -11,7 +11,7 @@ public class learn01 {
         Scanner input = new Scanner(System.in);
         a = input.nextInt();
         double b = (a - 32) * 5 / 9.0;
-        String s2=String.format("%.1f",b);：
+        String s2=String.format("%.1f",b);
         System.out.println(s2);
     }
     // 题目二 求三角形面积
