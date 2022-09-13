@@ -9,6 +9,7 @@ public class banji
         String name;
         int grade;
 
+          int code ;
         boolean cout;
 
             void setName(String name1)
