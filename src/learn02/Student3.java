@@ -1,16 +1,63 @@
 package learn02;
 
-public class Student2
+public class Student3
 {
+    public static class Course
+    {
+        protected String name;
+        protected int score;
 
-    public static class student
+
+
+
+
+        Course()
+        {
+
+        }
+        Course(String name,int score)
+        {
+          this.name=name;
+          this.score=score;
+        }
+        Course(Course c)
+        {
+            this.score=c.score;
+            this.name=c.name;
+        }
+        void setName(String name)
+        {
+            this.name=name;
+        }
+        void setScore(int score)
+        {
+            this.score=score;
+        }
+        String getName()
+        {
+            return this.name;
+        }
+        int   getScore()
+        {
+            return score;
+        }
+
+    }
+
+
+    public static class student extends Course
     {
 
           private  String name;
           private int age;
-          private String grade;//总数
+          private String grade;//年纪
           private  char sex; //性别
          private    int code ;//学号
+
+        protected int ClassNumber;//选课数目
+
+
+       private  Course[] cou  = new  Course[ClassNumber];//每一个课程类
 
 
       student()
@@ -50,7 +97,10 @@ public class Student2
 
         void setSex(char sex){this.sex=sex;}
 
-
+       void setClassNumber(int cn)
+       {
+           this.ClassNumber =cn;
+       }
 
 
         String getName()
@@ -73,14 +123,29 @@ public class Student2
         {
             return this.age;
         }
+        int getClassNumber(){
+          return ClassNumber;
+        }
 
-
-   public String toString()
+        public String toString()
    {
      return this.grade+","+this.name+","+this.sex+","+this.age;
    }
 
+       public void getHours()
+       {
+            for(int i=0;i<this.ClassNumber;i++)
+            {
 
+            }
+       }
+
+
+
+    }
+
+    public static class Client
+    {
 
     }
 public static void setOut(student s)
