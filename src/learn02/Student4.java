@@ -6,7 +6,7 @@ public class Student4 {
 
     public static  class lesson
     {
-        private  static String name;
+        private String name = null;
         private static int time;
 
 
@@ -84,22 +84,22 @@ public class Student4 {
             {
                  le[i]=new lesson();
                  System.out.print("input no "+(i+1)+" course name:");
-                 le[i].setName(sc.next());
+                 le[i].setName(sc.nextLine());
                  System.out.print("input no "+(i+1)+" course hour:");
                  le[i].setTime(sc.nextInt());
             }
         }
-        public String  getLesson()
+        public void  getLesson()
         {
-            String b = null;
+          //  String b = null;
 
             for(int i=0;i<this.lessonNumber;i++)
             {
-                b+="courses："+"\n"+"("+(i+1)+")"+le[i].getName()+":"+le[i].getTime()+"hour"+"\n";
+                //b+="courses："+"\n"+"("+(i+1)+")"+le[i].getName()+":"+le[i].getTime()+"hour"+"\n";
                  System.out.println( "courses："+"\n"+"("+(i+1)+")"+le[i].getName()+":"+le[i].getTime()+"hour"+"\n");
             }
 
-            return b;
+          //  return b;
         }
         
        private   int createSumTime()
@@ -183,7 +183,7 @@ public class Student4 {
             for(int i=0;i<this.studetNumber;i++)
             {
                 System.out.println("no "+(i+1)+" student information:");
-                System.out.println(this.getStudentName() +" "+this.getGrade()+" grade");
+                System.out.println(getStudentName() +" "+getGrade()+" grade");
                // System.out.println();
                this.getLesson();
 
@@ -204,6 +204,7 @@ public class Student4 {
     public  static void main(String [] args)
     {
        test();
+       student st = new student();
     }
 
  }

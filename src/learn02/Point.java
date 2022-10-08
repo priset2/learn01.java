@@ -3,8 +3,8 @@ import java.util.*;
 public class Point {
     public  static class point
     {
-        private int x;
-        private int y;
+        protected int x;
+        protected int y;
         point(){};
         point(int x , int y)
         {
@@ -37,9 +37,14 @@ public class Point {
           return y;
       }
 
+     public  String toString()
+      {
+          String s = "Point("+this.x+","+this.y+")";
+          return s;
+      }
 
     }
-    public static class circle
+    public static class circle extends  point
     {
        private  int x;
         private int y;
@@ -60,39 +65,72 @@ public class Point {
           this.y=c.y;
           this.r=c.r;
       }
-      void setX(int x)
+        public  void setX(int x)
       {
           this.x =x;
       }
-      void setY(int y)
+        public  void setY(int y)
       {
           this.y=y;
       }
-      void setR(double r)
+        public  void setR(double r)
       {
           this.r = r;
       }
-       void setSquare()
+        public  void setSquare()
        {
            this.square=Math.PI*r*r;
-       }
-        double getSquare()
+       }//getArea
+        public  double getSquare()
         {
             return square;
         }
-        double getR()
+        public  double getR()
         {
             return  r;
         }
-        int getX()
+        public  int getX()
         {
             return this.x;
         }
-        int getY()
+        public  int getY()
         {
             return this.y;
         }
 
+        public Boolean  contains(point p)
+        {
+            int disatnce = Math.abs(this.x-p.x)*Math.abs(this.x-p.x)+Math.abs(this.y-p.y)*Math.abs(this.y-p.y);
+            double r2= this.r*this.r;
+            if(r2>disatnce)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public Boolean  contains(int x,int y)
+        {
+            int disatnce = Math.abs(this.x-x)*Math.abs(this.x-x)+Math.abs(this.y-y)*Math.abs(this.y-y);
+            double r2= this.r*this.r;
+            if(r2>disatnce)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+    public String toString()
+    {
+        String s= "Area of Circle(("+this.x+","+this.y+"),"+this.r+") is:";
+        return s;
+    }
 
     }
     public static void isIn(point p, circle c)
@@ -127,6 +165,7 @@ public class Point {
         System.out.printf("%.2f",c.getSquare());
         System.out.println();
         isIn(p,c);
+
 
     }
 

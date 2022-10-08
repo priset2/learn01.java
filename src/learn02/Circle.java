@@ -51,13 +51,10 @@ public class Circle {
 
     }
 
+
     public static void main(String[] args)
     {
 
-        circle c1 =new circle();
 
-        c1.setRadius(4);
-
-         System.out.println(c1.getS());
     }
  }
