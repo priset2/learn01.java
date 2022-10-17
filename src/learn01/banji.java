@@ -10,7 +10,7 @@ public class banji
         int grade;
 
           int code ;
-        boolean cout;
+        Boolean cout;
 
             void setName(String name1)
             {

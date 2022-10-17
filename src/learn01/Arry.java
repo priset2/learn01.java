@@ -1,9 +1,6 @@
 package learn01;
 import java.util.*;
-import java.util.regex.*;
-import java.util.regex.Pattern;
-import java.util.random.*;
-import java.util.Scanner;
+
 import static java.util.Arrays.sort;
 //1 ....简略方式
 //2 java数组支持非矩形数组,重点在
